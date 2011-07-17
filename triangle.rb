@@ -14,7 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+   a,b,c = [a,b,c].sort
+   raise TriangleError, "Triangulo Invalido" if a<=0 or a+b<=c
+   case [a,b,c].uniq.size
+     when 1 then :equilateral
+     when 2 then :isosceles
+     else :scalene
+   end
+
 end
 
 # Error class used in part 2.  No need to change this code.
